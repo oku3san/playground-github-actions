@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "ブランチが選択されました (${{ toJSON(github) }})"
+      - run: echo "ブランチが選択されました (${{ github.ref_name }})"
