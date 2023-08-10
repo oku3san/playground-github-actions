@@ -1,0 +1,11 @@
+name: 'Dispatch'
+on:
+  workflow_dispatch:
+    branches: [ master ]
+jobs:
+  deploy:
+    name: "Dispatch"
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "ブランチが選択されました (${{ toJSON(github) }})"
