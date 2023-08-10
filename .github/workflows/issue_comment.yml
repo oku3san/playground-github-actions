@@ -7,8 +7,7 @@ jobs:
     name: "Issue comment"
     runs-on: ubuntu-latest
     if: (
-          github.event_name == 'issue_comment' &&
-          contains(github.event.comment.html_url, '/pull/') &&
+          github.event.issue.pull_request &&
           startsWith(github.event.comment.body, '/comment')
         )
 
