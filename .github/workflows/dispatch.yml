@@ -1,10 +1,11 @@
 name: 'Dispatch'
 on:
   workflow_dispatch:
-    sample:
-      description: 'This is sample input'
-      required: true
-      type: string
+    inputs:
+      sample:
+        description: 'This is sample input'
+        required: true
+        type: string
     branches: [ master ]
 jobs:
   deploy:
