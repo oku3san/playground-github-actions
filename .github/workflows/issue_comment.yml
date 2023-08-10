@@ -6,9 +6,11 @@ jobs:
   deploy:
     name: "Issue comment"
     runs-on: ubuntu-latest
-    if: github.event_name == 'issue_comment' &&
-        contains(github.event.comment.html_url, '/pull/') &&
-        startsWith(github.event.comment.body, '/comment') )
+    if: (
+          github.event_name == 'issue_comment' &&
+          contains(github.event.comment.html_url, '/pull/') &&
+          startsWith(github.event.comment.body, '/comment')
+        )
 
     steps:
       - run: echo "PR に /comment が追加されました (${{ github.event.comment.body }})"
