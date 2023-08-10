@@ -1,6 +1,10 @@
 name: 'Dispatch'
 on:
   workflow_dispatch:
+    sample:
+      description: 'This is sample input'
+      required: true
+      type: string
     branches: [ master ]
 jobs:
   deploy:
@@ -9,3 +13,4 @@ jobs:
 
     steps:
       - run: echo "ブランチが選択されました (${{ github.ref_name }})"
+      - run: echo "sample text が入力されました (${{ inputs.sample }})"
