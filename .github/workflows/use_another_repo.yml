@@ -1,0 +1,14 @@
+name: Use another repo
+
+on:
+  workflow_dispatch:
+    branches: [ master ]
+
+jobs:
+  useAnotherRepo:
+    name: "Use another repo"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
