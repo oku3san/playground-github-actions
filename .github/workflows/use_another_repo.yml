@@ -21,4 +21,4 @@ jobs:
           ssh-key: ${{ secrets.PRIVATE_REPO_SSH_KEY }}
 
       - name: Check
-        run: ls
+        run: ls -la terraform-sandbox-for-work
