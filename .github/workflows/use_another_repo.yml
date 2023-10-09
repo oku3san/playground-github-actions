@@ -18,6 +18,7 @@ jobs:
         with:
           repository: oku3san/terraform-sandbox-for-work
           path: terraform-sandbox-for-work
+          ssh-key: ${{ secrets.PRIVATE_REPO_SSH_KEY }}
 
       - name: Check
         run: ls
