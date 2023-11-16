@@ -29,4 +29,3 @@ jobs:
           branch: staging
           title: Automatically generated PR
           body: This PR is automatically generated using GitHub Actions.
-          base: ${{ github.event.inputs.target_branch }}
