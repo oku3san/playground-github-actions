@@ -1,7 +1,11 @@
 name: Create Pull Request
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # dispatch イベントに反応する
+    inputs:
+      target_branch:
+        description: 'Target branch for the pull request'
+        required: true
 
 permissions:
   contents: write
@@ -20,6 +24,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: staging
-          commit-message: 'Update Assets'
-
-      - run: echo "aaaaaaa"
+          title: Automatically generated PR
+          body: This PR is automatically generated using GitHub Actions.
+          base: ${{ github.event.inputs.target_branch }}
