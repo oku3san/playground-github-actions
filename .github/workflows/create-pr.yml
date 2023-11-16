@@ -20,5 +20,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: staging
+          commit-message: 'Update Assets'
 
       - run: echo "aaaaaaa"
