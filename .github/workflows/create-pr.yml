@@ -21,6 +21,6 @@ jobs:
 
       - name: Create Pull Request
         run: |
-          gh pr create --base staging --head main --title "リリース" --body ""
+          gh pr create --base staging --head main --title "リリース" --body-file .github/pull_request_template.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
