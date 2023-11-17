@@ -22,15 +22,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Reset promotion branch
-        run: |
-          git fetch origin main:main
-          git reset --hard main
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: staging
           title: Automatically generated PR
           body: This PR is automatically generated using GitHub Actions.
