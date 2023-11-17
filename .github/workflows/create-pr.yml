@@ -23,8 +23,5 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          title: Automatically generated PR
-          body: This PR is automatically generated using GitHub Actions.
+        run: |
+          gh pr create --base main --head staging --title "リリース" --body ""
