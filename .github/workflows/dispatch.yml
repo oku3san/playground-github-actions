@@ -6,21 +6,10 @@ on:
         description: 'This is sample input'
         required: true
         type: string
-      choice:
-        description: 'This is choice input'
-        required: true
-        type: choice
-        options:
-          - aaa
-          - bbb
-          - ccc
-    branches: [ master ]
 jobs:
   deploy:
     name: "Dispatch"
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "ブランチが選択されました (${{ github.ref_name }})"
       - run: echo "sample text が入力されました (${{ inputs.sample }})"
-      - run: echo "choice が選択されました (${{ inputs.choice }})"
